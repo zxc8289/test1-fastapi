@@ -163,3 +163,15 @@ async def delete_data(id:int):
         return "에러발생"
 
     return results
+
+
+@app.post("/files-base64/")
+async def bas64_file(
+    uploadFile: str = Form(), token: str = Form()
+):
+    
+    # print(uploadFile)
+    return {
+        "token": token,
+        "uploadFile": uploadFile
+    }
